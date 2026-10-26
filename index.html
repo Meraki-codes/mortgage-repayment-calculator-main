@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage repayment calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="mortgage-calculator">
+        <div class="header">
+          <h2>Mortgage Calculator</h2>
+          <button type="button" id="clearAll" class="clear-btn">
+            Clear All
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="mortgageAmount">Mortgage Amount</label>
+          <div class="input-group top">
+            <span class="symbol">£</span>
+            <input type="number" id="mortgageAmount" placeholder="" />
+          </div>
+          <small></small>
+        </div>
+
+        <div class="row">
+          <div class="form-group">
+            <label for="mortgageTerm">Mortgage Term</label>
+            <div class="input-group top">
+              <input type="number" id="mortgageTerm" placeholder="" />
+              <span class="symbol">years</span>
+            </div>
+            <small></small>
+          </div>
+
+          <div class="form-group">
+            <label for="interestRate">Interest Rate</label>
+            <div class="input-group top">
+              <input type="number" id="interestRate" placeholder="" />
+              <span class="symbol">%</span>
+            </div>
+            <small></small>
+          </div>
+        </div>
+
+        <fieldset class="form-group">
+          <legend>Mortgage Type</legend>
+          <div class="radio-option">
+            <input
+              type="radio"
+              name="mortgageType"
+              id="mortgageType1"
+              value="repayment"
+            />
+            <label for="mortgageType1">Repayment</label>
+          </div>
+
+          <div class="radio-option">
+            <input
+              type="radio"
+              name="mortgageType"
+              id="mortgageType2"
+              value="interest-only"
+            />
+            <label for="mortgageType2">Interest Only</label>
+          </div>
+          <small></small>
+        </fieldset>
+
+        <button type="submit">
+          <span> <img src="assets/images/icon-calculator.svg" alt="" /> </span
+          >Calculate Repayments
+        </button>
+      </form>
+
+      <div class="mortgage-results">
+        <div class="empty">
+          <img src="assets/images/illustration-empty.svg" alt="Results shown" />
+        </div>
+        <h2>Results shown here</h2>
+        <p>
+          Complete the form and click “calculate repayments” to see what your
+          monthly repayments would be.
+        </p>
+      </div>
+
+      <div class="results-container hidden">
+        <div class="results-container-header">
+          <h2>Your results</h2>
+          <p>
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click "calculate
+            repayments"
+          </p>
+        </div>
+        <div class="results-display">
+          <div class="monthly-repayment">
+            <p>Your monthly repayments</p>
+            <h1 id="amount">£0</h1>
+          </div>
+
+          <div class="total-repaid">
+            <p>Total you'll repay over the term</p>
+            <h2 id="total-amount">£0</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
